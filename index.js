@@ -3,10 +3,9 @@
   require('dotenv').config();
 
   if (process.argv.includes('--registerCommands')) await require('./src/createCommands')();
-  if (process.argv.includes('--registerFont')) {
-    const { registerFont } = require('canvas');
-    registerFont('arial.ttf', { family: 'Arial' });
-  };
+  
+  const { registerFont } = require('canvas');
+  registerFont('arial.ttf', { family: 'Arial' });
   
   const Discord = require('discord.js');
   const client = new Discord.Client({ intents: Object.values(Discord.GatewayIntentBits).filter(bit => typeof bit == 'number') });

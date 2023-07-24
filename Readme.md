@@ -3,7 +3,7 @@
 Sonrasında şu komutu dosya konumunda açtığınız CMD'ye yazın:
 
 ```
-npm install && node index.js --registerCommands
+npm install && node index.js --registerCommands --registerFont
 ```
 
 # Davet
