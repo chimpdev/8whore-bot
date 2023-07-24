@@ -15,7 +15,7 @@
 
   client.on('messageCreate', async message => {
     if (message.partial) await message.fetch();
-    if (message.author.id !== DEVELOPER_ID) return;
+    if (message.author.id !== process.env.DEVELOPER_ID) return;
 
     if (message.content.startsWith('!eval')) {
       const util = require('util');
