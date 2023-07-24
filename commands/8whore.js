@@ -81,8 +81,8 @@ module.exports = {
       };
       
       logs.push({ message: 'Text placement started.', date: Date.now() });
-      placeText(ctx, 120, 14, 172, 40, interaction.user.username, 30, 'arial', '#ffffff', 120, 14 + 30);
-      placeText(ctx, 170, 180, 240, 40, interaction.options.getUser('user').username, 25, 'arial', '#ffffff', 185, 185 + 25);
+      placeText(ctx, 120, 14, 172, 40, interaction.user.username, 30, 'Arial', '#ffffff', 120, 14 + 30);
+      placeText(ctx, 170, 180, 240, 40, interaction.options.getUser('user').username, 25, 'Arial', '#ffffff', 185, 185 + 25);
       logs.push({ message: 'Text placement ended.', date: Date.now() });
 
       logs.push({ message: 'Attachment creation started.', date: Date.now() });
