@@ -16,27 +16,5 @@
     return command.execute(interaction).catch(error => logger.error(error));
   });
 
-  client.on('messageCreate', async message => {
-    if (message.partial) await message.fetch();
-    if (message.author.id !== process.env.DEVELOPER_ID) return;
-
-    if (message.content.startsWith('!eval')) {
-      const util = require('util');
-      const code = message.content.split(' ').slice(1).join(' ');
-
-      try {
-        logger.info(`Evaluating code: ${code}`);
-        const isAsync = code.includes('return') || code.includes('await');
-        const result = isAsync ? await eval(`(async () => { ${code} })()`) : eval(code);
-        const inspected = util.inspect(result, { depth: 0 });
-        
-        await message.reply({ embeds: [{ description: `\`\`\`js\n${inspected}\n\`\`\`` }], allowedMentions: { repliedUser: false } });
-      } catch (error) {
-        logger.error(error);
-        await message.reply({ embeds: [{ description: `\`\`\`js\n${error}\n\`\`\`` }], allowedMentions: { repliedUser: false } });
-      };
-    };
-  });
-
   client.login(process.env.TOKEN);
 })();
