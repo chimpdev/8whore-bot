@@ -6,7 +6,9 @@ module.exports = {
   data: {
     name: '8whore',
     type: ApplicationCommandType.User,
-    dm_permission: false
+    dm_permission: false,
+    integration_types: [1],
+    contexts: [0, 2]
   },
   execute: async interaction => {
     try {
