@@ -83,8 +83,8 @@ module.exports = {
       };
       
       logs.push({ message: 'Text placement started.', date: Date.now() });
-      placeText(ctx, 120, 14, 172, 40, interaction.member ? interaction.member.displayName : interaction.user.username, 30, 'Arial', '#ffffff', 120, 14 + 30);
-      placeText(ctx, 170, 180, 240, 40, interaction.options.getMember('user') ? interaction.options.getMember('user').displayName : interaction.options.getUser('user').username, 25, 'Arial', '#ffffff', 185, 185 + 25);
+      placeText(ctx, 120, 14, 172, 40, interaction.guild ? interaction.member.displayName : interaction.user.username, 30, 'Arial', '#ffffff', 120, 14 + 30);
+      placeText(ctx, 170, 180, 240, 40, interaction.guild ? interaction.options.getMember('user').displayName : interaction.options.getUser('user').username, 25, 'Arial', '#ffffff', 185, 185 + 25);
       logs.push({ message: 'Text placement ended.', date: Date.now() });
 
       logs.push({ message: 'Attachment creation started.', date: Date.now() });
